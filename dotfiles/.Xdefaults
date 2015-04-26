@@ -1,0 +1,69 @@
+! -------------------------------------------------- ~/.Xdefaults----
+! -------------------------------------------------------------------
+
+! --- special colors ---
+ *foreground: #00D1A2
+ *background : #191919
+! *background : #303030
+
+! --- options ---
+! --- *font: xft:pragmata:size=8:dpi=96
+! --- *boldFont: xft:pragmata:style=Bold:size=8:dpi=96
+ *font: xft:termsyn:size=14:dpi=96
+ *boldFont: xft:termsyn:size=14:dpi=96
+ *scrollBar: false
+ *geometry:   95x15
+ *cursorBlink: true
+ *cursorUnderline: true
+ *urlLauncher: luakit 
+ *internalBorder: 6
+
+! --- standard colors ---
+
+! black
+*color0: #191919
+
+! bright_black
+*color8: #3c3c3c
+
+! red
+*color1: #a45154
+
+! bright_red
+*color9: #d6acae
+
+! green
+*color2: #54a451
+
+! bright_green
+*color10: #aed6ac
+
+! yellow
+*color3: #a4a151
+
+! bright_yellow
+*color11: #d6d5ac
+
+! blue
+*color4: #5154a4
+
+! bright_blue
+*color12: #acaed6
+
+! magenta
+*color5: #a151a4
+
+! bright_magenta
+*color13: #d5acd6
+
+! cyan
+*color6: #51a4a1
+
+! bright_cyan
+*color14: #acd6d5
+
+! white
+*color7: #c0c0c0
+
+! bright_white
+*color15: #ffffff

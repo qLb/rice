@@ -1,0 +1,9 @@
+" Themes
+hi CmdLine background: #191919; color: white; transition: all 0.25s;
+hi Normal background: #191919; color: white; transition: all 0.25s;
+hi ErrorMsg background: #b97d7b; color: white; font-weight: bold;
+hi StatusLine background: transparent; color: #dadada; font-weight: normal;
+hi ContentSeparator border: none; display: -moz-box;
+
+" Ctrl-a
+inoremap <C-a> <C-Home><C-S-End>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <title>INSTALL ARCHLINUX!</title>
+    <link rel="stylesheet/less" type="text/css" href="./homepage.less" />
+    <script src="./jquery.js"></script>
+    <script src="./less.min.js"></script>
+  </head>
+  <body>
+    <script>
+      var sp_config = {
+        "search": {
+          name: "ddg",
+          action: "https://duckduckgo.com/",
+          method: "GET",
+          arg_name: "q"
+        },
+        "pages": [
+          {name: "relax", tiles: [
+            {name: "reddit", url: "https://www.reddit.com/"},
+            {name: "/g/", url: "https://boards.4chan.org/g/"},
+            {name: "gmail", url: "https://mail.google.com/"},
+            {name: "btc-e", url: "https://btc-e.com/"},
+            {name: "what", url: "https://what.cd/"},
+            {name: "soundcloud", url: "https://soundcloud.com/"},
+            {name: "shush", url: "http://shush.se/"},
+            {name: "imgur", url: "https://imgur.com/"},
+            {name: "mega", url: "https://mega.co.nz"}
+          ]},
+          {name: "code", tiles: [
+            {name: "stackoverflow", url: "https://stackoverflow.com/"},
+            {name: "nodejs docs", url: "https://nodejs.org/api/"}
+          ]},
+        ],
+        "info": "steins.gate / Arch Linux"
+      };
+      var startpage = function (config) {
+        var cmax = 99;
+        var cmin = 60;
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function randomBg() {
+          return "#" + getRandomInt(cmin, cmax).toString() + getRandomInt(cmin, cmax).toString() + getRandomInt(cmin, cmax).toString();
+        }
+
+        if (config['search']) {
+          var s = config['search'];
+          $("<form class='search' action='" + s['action'] + "' method='" + s['method'] + "'> \
+              <input type='text' name='" + s['arg_name'] + "' placeholder='" + s['name'] + "' /> \
+            </form>").appendTo("body");
+        }
+        
+        $(' \
+          <div class="paginator">[ <span class="pages"></span> ]</div> \
+          <div class="sysinfo"></div> \
+          <div class="main" id="main"></div> \
+          <div class="sysinfo right"></div>').appendTo("body");
+        
+        if (config['pages'].length <= 1) {
+          $(".paginator").hide();
+        }
+
+        config['pages'].forEach (function (page, i) {
+          var name = (page.name) ? page.name : i.toString();
+          $("<div class='page tiles' data-name='" + name + "' id='page" + i + "'></div>").appendTo("#main");
+          page['tiles'].forEach(function (tile) {
+            $("<a class='tile'>").attr("href", tile['url']).html(tile['name']).appendTo("#page" + i);
+          });
+          if ((page['tiles'].length)%2 == 1) {
+            $("#page" + i + " .tile:first").addClass("x");
+          }
+          if (i != 0) {
+            $("#page" + i).hide();
+          }
+          if (config['pages'].length > 1) {
+            if (i > 0) {
+              $("<span> &bull; </span>").appendTo(".pages");
+            }
+            $("<a href='#'>" + name + "</a>").click(function () {
+              $(".page").hide();
+              $("#page" + i).show();
+            }).appendTo(".pages");
+          }
+        });
+
+        $(".sysinfo").html(config['info']);
+        
+        $(".tiles > a").each(function () {
+          $(this).css("background-color", randomBg());
+        });
+
+      }
+      startpage(sp_config);
+    </script>
+  </body>
+</html>

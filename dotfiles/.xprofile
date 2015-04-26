@@ -1,0 +1,18 @@
+#export PANEL_FIFO=/tmp/panel-fifo
+#export PANEL_HEIGHT=30
+nm-applet &
+#dbus-launch docky &
+compton --config ~/.config/compton.conf &
+xscreensaver -nosplash &
+xss-lock -- xscreensaver-command -lock &
+mpd &
+#sxhkd -f 50 &
+#urxvt &
+#tint2 &
+#hsetroot -fill ~/.config/bspwm/wallpaper.jpg &
+#exec bspwm
+#sleep 2
+#~/.config/bspwm/panel &
+#/usr/bin/tint2 &
+sudo mount /dev/sdb3 /mnt/second &
+sudo systemctl start NetworkManager nginx php-fpm &

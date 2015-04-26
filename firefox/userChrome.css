@@ -1,0 +1,112 @@
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* chrome://browser/content/browser.xul */
+
+* {
+  font-family: "Termsyn" !important;
+  border: none !important;
+}
+
+.tab-background-start, .tab-background-end, .tab-background-start:hover, .tab-background-end:hover, #navigator-toolbox:after, .tabbrowser-tab:after, .tab-icon, .tabs-newtab-button, .tab-close-button, #back-button, #forward-button {
+  visibility: hidden !important;
+  width: 1px;
+  background: none !important;
+  content: none !important;
+}
+
+.tab-background-middle {
+  background: none !important;
+}
+
+.tabbrowser-tabs, #nav-bar, #urlbar, #TabsToolbar {
+  background: #303030 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.tab-background:not([selected="true"]):hover > *, .tabs-newtab-button:hover > * {
+  background: #191919 !important;
+}
+
+#TabsToolbar {
+
+}
+
+.tabbrowser-tab[selected="true"] .tab-background > * {
+  background: #191919 !important;
+}
+
+
+.tabbrowser-tab[selected=true] {
+    font-weight: bold !important;
+}
+
+.tab-content {
+  color: white !important;
+}
+
+.tab-background {
+  background-image: none !important;
+}
+
+/* Place menu button and panel ui button at the left. Can't do this in customize mode. */
+#TabsToolbar > * { -moz-box-ordinal-group: 4 !important; }
+#tabbrowser-tabs { -moz-box-ordinal-group: 2 !important; }
+#new-tab-button { -moz-box-ordinal-group: 3 !important;  }
+#ctraddon_appbutton,
+#ctraddon_panelui-button { -moz-box-ordinal-group: 1 !important; }
+
+/* Anonymous elements that do nothing. */
+#navigator-toolbox::after, #tabbrowser-tabs::before, .tabbrowser-tab::after, .tabbrowser-tab::before, .toolbar-primary::after {
+    display: none !important;
+}
+
+#page-proxy-favicon {
+    -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
+    width: 14px !important;
+    height: 14px !important;
+ }
+
+ #nav-bar {
+  display: none !important;
+}
+/*
+#nav-bar {
+  position: fixed !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  right: 0px !important;
+  height: 25px !important;
+  border-top: none !important;
+  padding: 0 !important;
+}
+
+#content-deck {
+  margin-bottom: 25px !important;
+}
+
+#urlbar-container {
+  -moz-box-align: none !important;
+  position: relative !important;
+  top: -20px !important;
+  width: 100% !important;
+}
+
+#urlbar-wrapper {
+  clip-path: none !important;
+}
+
+#nav-bar-customization-target, #PanelUI-button {
+  margin-top: -15px !important;
+}
+
+#PanelUI-button {
+  display: none;
+} */
+
+scrollbar {
+  display: none !important;
+}
+
+statuspanel { display:none!important; }
